@@ -42,7 +42,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Textarea } from "@/components/ui/textarea";
+
 import { Button } from "@/components/ui/button";
 
 type blogsType = {
@@ -203,11 +203,7 @@ export default function Cards({ blog }: { blog: blogsType }) {
                                 <AlignLeft size={16} />
                               </div>
 
-                              <Textarea
-                                placeholder=""
-                                id="message"
-                                className="border-none min-h-[190px] "
-                              />
+                         
                             </div>
                           </div>
                         </div>
