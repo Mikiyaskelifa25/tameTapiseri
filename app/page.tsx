@@ -93,17 +93,6 @@ const options = {
     legend: {
       display: false,
     },
-    datalabels: {
-      display: true,
-      align: "left",
-    
-      font: {
-        size: "16",
-        weight: "bold",
-        position: "absolute",
-      },
-      color: "black",
-    },
   },
 };
 
