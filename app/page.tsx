@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/popover";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(ArcElement, Tooltip, Legend,ChartDataLabels);
 
 const Requests = [
   {
