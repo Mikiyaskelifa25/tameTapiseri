@@ -2,7 +2,6 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-import { Textarea } from "@/components/ui/textarea";
 
 import { AlignLeft, Bold, Calendar, ChevronLeft, Filter, Italic, List, ListOrdered, Plus, Search, SpellCheck2, Underline } from "lucide-react";
 import React from "react";
@@ -147,11 +146,7 @@ export default function Blogs() {
                     </div>
                
 
-                  <Textarea
-                    placeholder=""
-                    id="message"
-                    className="border-none min-h-[190px] "
-                  />
+            
                   </div>
                 
                 </div>
