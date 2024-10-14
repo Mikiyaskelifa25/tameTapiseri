@@ -51,6 +51,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { RadioGroup } from "@/components/ui/radio-group";
+import Radiobox_components from "../Shared_Components/Radiobox_components";
 
 const Requests = [
   {
@@ -157,8 +159,24 @@ export default function Staffs() {
                 </h1>
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-auto p-0" align="start">
-              <h1 className="p-4 font-bold  animation-ping"> i will be back</h1>
+            <PopoverContent
+              className="w-[200px] p-3 flex flex-col  items-center justify-center"
+              align="start"
+            >
+              <div className=" w-full flex items-center justify-between px-2">
+                <h1 className="font-semibold">Filter </h1>
+                <h1 className="px-1 bg-red-500 text-white rounded"> clear</h1>
+              </div>
+              <div className="flex mt-2 p-2 w-full justify-between">
+                <div>
+                  <h1 className="text-sm my-2"> Status</h1>
+                  <RadioGroup defaultValue="one">
+                    <Radiobox_components lable="Active" id="one" />
+                    <Radiobox_components lable="Inactive" id="two" />
+                  </RadioGroup>
+                </div>
+       
+              </div>
             </PopoverContent>
           </Popover>
         </div>

@@ -97,6 +97,7 @@ body::-webkit-scrollbar-thumb:hover {
 .scroll-css::-webkit-scrollbar{
   width: 4px;
   height: 4px;
+  
 }
 
 .scroll-css::-webkit-scrollbar-track{

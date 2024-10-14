@@ -1,0 +1,45 @@
+[
+    {
+      "phonenumber": "+25195846852",
+      "name": "Abebe",
+      "MiddleName": "Bekele",
+      "email": "abebe@cars.com",
+      "request": "customers/customerDetail"
+      
+    },
+    {
+        "phonenumber": "+25195846852",
+        "name": "Able",
+        "MiddleName": "Mola",
+        "email": "Able@cars.com",
+        "request": "customers/customerDetail"
+    },
+    {
+        "phonenumber": "+25195846852",
+        "name": "Eyobe",
+        "MiddleName": "Tesfaye",
+        "email": "Eyobe@cars.com",
+        "request": "customers/customerDetail"
+    },
+    {
+        "phonenumber": "+25195846852",
+        "name": "Dawit",
+        "MiddleName": "Bekele",
+        "email": "abebe@cars.com",
+        "request": "customers/customerDetail"
+    },
+    {
+        "phonenumber": "+25195846852",
+        "name": "Meberatu",
+        "MiddleName": "Bekele",
+        "email": "Kefeley@cars.com",
+        "request": "customers/customerDetail"
+    },
+    {
+        "phonenumber": "+25195846852",
+        "name": "Tezazu",
+        "MiddleName": "Bekele",
+        "email": "Derse@cars.com",
+        "request": "customers/customerDetail"
+    }
+  ]

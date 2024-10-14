@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   Calendar,
   ChevronLeft,
@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import React from "react";
 import Link from "next/link";
-import ReactPaginate from 'react-paginate';
+import ReactPaginate from "react-paginate";
 import Calender from "../Shared_Components/Calender";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -32,6 +32,9 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import Check_Box from "../Shared_Components/Checkbox";
+import { RadioGroup } from "@/components/ui/radio-group";
+import Radiobox_components from "../Shared_Components/Radiobox_components";
 
 const Requests = [
   {
@@ -96,7 +99,6 @@ const Requests = [
   },
 ];
 export default function Sales() {
-
   return (
     <div className="w-full h-full flex flex-col items-center justify-start ">
       <div className="flex w-full h-[50px] items-center mt-2">
@@ -130,7 +132,7 @@ export default function Sales() {
           </Popover>
         </div>
 
-        <div className="border rounded-[6px] flex items-center justify-center ml-4  bg-white h-[30px]">
+        <div className="border rounded-[6px] flex items-center justify-center ml-4   bg-white h-[30px]">
           <Popover>
             <PopoverTrigger asChild>
               <Button variant={null}>
@@ -140,8 +142,32 @@ export default function Sales() {
                 </h1>
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-auto p-0" align="start">
-              <h1 className="p-4 font-bold  animation-ping"> i will be back</h1>
+            <PopoverContent
+              className="w-[250px] p-3 flex flex-col  items-center justify-center"
+              align="start"
+            >
+              <div className=" w-full flex items-center justify-between px-2">
+                <h1 className="font-semibold">Filter </h1>
+                <h1 className="px-1 bg-red-500 text-white rounded"> clear</h1>
+              </div>
+              <div className="flex mt-2 p-2 w-full justify-between">
+                <div>
+                  <h1 className="text-sm my-2"> Status</h1>
+                  <RadioGroup defaultValue="one">
+                    <Radiobox_components lable="Paid" id="one" />
+                    <Radiobox_components lable="Pending" id="two" />
+                  </RadioGroup>
+                </div>
+                <div className="space-y-2">
+                <h1 className="text-sm my-2 "> Category</h1>
+                  <Check_Box lable="Door" />
+                  <Check_Box lable="Chair" />
+                  <Check_Box lable="Floor" />
+                  <Check_Box lable="Roof" />
+                  <Check_Box lable="Gear" />
+                  <Check_Box lable="Steering Wheel" />
+                </div>
+              </div>
             </PopoverContent>
           </Popover>
         </div>
@@ -169,7 +195,7 @@ export default function Sales() {
         </div>
       </div>
       <div className="w-full h-full flex items-start justify-center mt-2   overflow-auto ">
-        <Table className="w-[95%] border rounded-[15px] shadow bg-white">
+        <Table className="w-[95%]  rounded-[15px] shadow bg-white">
           <TableHeader>
             <TableRow className="  ">
               <TableHead className="text-[#333843] font-semibold">
@@ -245,17 +271,31 @@ export default function Sales() {
             <TableRow>
               <TableCell colSpan={4}></TableCell>
               <TableCell colSpan={3} className=" ">
-              <ReactPaginate
-        breakLabel={<h1 className="font-bold bg-[#DEDEFA] text-[#5C59E7] rounded-[5px] mx-1 w-[30px] h-[30px] flex items-center justify-center">...</h1>}
-        nextLabel={<h1 className=" bg-[#DEDEFA] text-[#5C59E7] rounded-[5px] mx-1 w-[30px] h-[30px] flex items-center justify-center"> <ChevronRight size={20}/> </h1>}
-        marginPagesDisplayed={3}
-        pageRangeDisplayed={3}
-        pageCount={15}
-        previousLabel={<h1 className="bg-[#DEDEFA] text-[#5C59E7] rounded-[5px] mx-1 w-[30px] h-[30px] flex items-center justify-center"> <ChevronLeft size={20}/> </h1>}
-        renderOnZeroPageCount={null}
-        className="flex items-center justify-center max-w-full"
-        pageLinkClassName="font-semibold  bg-[#DEDEFA] text-[#5C59E7] rounded-[5px] mx-1 w-[30px] h-[30px] flex items-center justify-center"
-      />
+                <ReactPaginate
+                  breakLabel={
+                    <h1 className="font-bold bg-[#DEDEFA] text-[#5C59E7] rounded-[5px] mx-1 w-[30px] h-[30px] flex items-center justify-center">
+                      ...
+                    </h1>
+                  }
+                  nextLabel={
+                    <h1 className=" bg-[#DEDEFA] text-[#5C59E7] rounded-[5px] mx-1 w-[30px] h-[30px] flex items-center justify-center">
+                      {" "}
+                      <ChevronRight size={20} />{" "}
+                    </h1>
+                  }
+                  marginPagesDisplayed={3}
+                  pageRangeDisplayed={3}
+                  pageCount={15}
+                  previousLabel={
+                    <h1 className="bg-[#DEDEFA] text-[#5C59E7] rounded-[5px] mx-1 w-[30px] h-[30px] flex items-center justify-center">
+                      {" "}
+                      <ChevronLeft size={20} />{" "}
+                    </h1>
+                  }
+                  renderOnZeroPageCount={null}
+                  className="flex items-center justify-center max-w-full"
+                  pageLinkClassName="font-semibold  bg-[#DEDEFA] text-[#5C59E7] rounded-[5px] mx-1 w-[30px] h-[30px] flex items-center justify-center"
+                />
               </TableCell>
             </TableRow>
           </TableFooter>

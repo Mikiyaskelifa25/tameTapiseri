@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Jone Doe",
+    "lastTime": "4 min ago",
+    "src":"https://github.com/shadcn.png",
+    "online": false
+  },
+  {
+    "name": "Abebe Sintayhu",
+    "lastTime": "4 min ago",
+    "src":"",
+    "online": false
+  },
+  {
+    "name":"Sew Mehone ",
+  "lastTime": "4 Days ago",
+  "src":"https://github.com/shadcn.png",
+  "online": true
+    
+  },
+  {
+    "name": "Derje Sintayhu",
+    "lastTime": "4 min ago",
+    "src":"",
+    "online": false
+  },
+  {
+    "name": "Melat Sintayhu",
+    "lastTime": "4 min ago",
+    "src":"",
+    "online": false
+  }
+]

@@ -1,13 +1,12 @@
 "use client";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+
 import {
   ChevronLeft,
   ChevronRight,
   FileText,
   Filter,
   Pencil,
-  Plus,
   ScrollText,
   Search,
   Trash2,
@@ -35,87 +34,13 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import ServiceSheet from "./ServiceSheet";
+import serviceTable from "../Fake_Data/serviceTable.json";
+import Check_Box from "../Shared_Components/Checkbox";
 
-const Requests = [
-  {
-    phonenumber: "+25195846852",
-    name: "Teme tapiseri",
-    Date: "Sep 01 2024",
-    amount: "ETB 2,568",
-    Status: "Paid",
-    servicename: "Taitu",
-    bank: "#4556666885",
-    refno: "FT556656565",
-  },
-  {
-    phonenumber: "+2511111111",
-    name: "David",
-    Date: "Sep 01 2024",
-    amount: "ETB 2,568",
-    Status: "Paid",
-    servicename: "Masqel",
-    bank: "#455885",
-    refno: "FT5565",
-  },
-  {
-    phonenumber: "+2511555",
-    name: "Aman",
-    Date: "Sep 01 2024",
-    amount: "ETB 2,568",
-    Status: "Paid",
-    servicename: "Wub Alem",
-    bank: "#4556666885",
-    refno: "FT556656757565",
-  },
-  {
-    phonenumber: "+25195846852",
-    name: "Teme tapiseri",
-    Date: "Sep 01 2024",
-    amount: "ETB 2,568",
-    Status: "Paid",
-    servicename: "Taitu",
-    bank: "#4556666885",
-    refno: "FT556656565",
-  },
-  {
-    phonenumber: "+2511111111",
-    name: "David",
-    Date: "Sep 01 2024",
-    amount: "ETB 2,568",
-    Status: "Paid",
-    servicename: "Masqel",
-    bank: "#455885",
-    refno: "FT5565",
-  },
-  {
-    phonenumber: "+25195846852",
-    name: "Teme tapiseri",
-    Date: "Sep 01 2024",
-    amount: "ETB 2,568",
-    Status: "Paid",
-    servicename: "Taitu",
-    bank: "#4556666885",
-    refno: "FT556656565",
-  },
-];
 export default function Services() {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-start ">
+    <div className="w-full h-[90%] flex flex-col items-center justify-start ">
       <div className="flex w-full h-[50px] items-center mt-2 ">
         <Link href={"/"} className="flex items-center gap-2 ml-4">
           {" "}
@@ -141,8 +66,26 @@ export default function Services() {
                 </h1>
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-auto p-0" align="start">
-              <h1 className="p-4 font-bold  animation-ping"> i will be back</h1>
+            <PopoverContent
+              className="w-[200px] p-3 flex flex-col  items-center justify-center"
+              align="start"
+            >
+              <div className=" w-full flex items-center justify-between px-2">
+                <h1 className="font-semibold">Filter </h1>
+                <h1 className="px-1 bg-red-500 text-white rounded"> clear</h1>
+              </div>
+              <div className="flex mt-2 p-2 w-full justify-between">
+           
+                <div className="space-y-2">
+                <h1 className="text-sm my-2 "> Category</h1>
+                  <Check_Box lable="Door" />
+                  <Check_Box lable="Chair" />
+                  <Check_Box lable="Floor" />
+                  <Check_Box lable="Roof" />
+                  <Check_Box lable="Gear" />
+                  <Check_Box lable="Steering Wheel" />
+                </div>
+              </div>
             </PopoverContent>
           </Popover>
         </div>
@@ -169,113 +112,7 @@ export default function Services() {
           </Popover>
         </div>
 
-        <Sheet>
-          <SheetTrigger className="ml-6 absolute right-10 bg-[#29B213] flex py-[5px] px-2 rounded">
-            <Plus strokeWidth={2} size={16} color="white" />
-            <h1 className="text-[11px] ml-2 font-bold text-white">
-              Add Service
-            </h1>
-          </SheetTrigger>
-          <SheetContent>
-            <SheetHeader>
-              <SheetTitle>Service Information</SheetTitle>
-              <SheetDescription></SheetDescription>
-            </SheetHeader>
-            <div className="w-full flex flex-col mt-2">
-              <div className="grid w-full max-w-sm items-center gap-1.5 mt-4">
-                <Label htmlFor="email">Service Code</Label>
-                <Input
-                  type="text"
-                  placeholder="001"
-                  className="bg-[#F9F9FC]  shadow"
-                />
-              </div>
-              <div className=" w-full max-w-sm  mt-4">
-                <Select>
-                  <SelectTrigger className="max-w-sm shadow bg-[#F9F9FC] ">
-                    <SelectValue placeholder="Chair" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="light">Chair</SelectItem>
-                    <SelectItem value="dark">Door</SelectItem>
-                    <SelectItem value="system">Floor</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="grid w-full max-w-sm items-center gap-1.5 mt-4">
-                <Label htmlFor="email">
-                  <h1 className="text-sm">Service Name</h1>
-                </Label>
-                <Input
-                  type="text"
-                  id="email"
-                  placeholder="Wub Alem"
-                  className="bg-[#F9F9FC] shadow"
-                />
-              </div>
-              <div className=" w-full max-w-sm  mt-4">
-                <Select>
-                  <SelectTrigger className="max-w-sm shadow bg-[#F9F9FC] ">
-                    <SelectValue placeholder="Suzuki" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="light">Toyota</SelectItem>
-                    <SelectItem value="dark">Bmw</SelectItem>
-                    <SelectItem value="system">Land Rover</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="grid w-full max-w-sm items-center gap-1.5 mt-4">
-                <Label htmlFor="email">
-                  <h1 className="text-sm">Car Model</h1>
-                </Label>
-                <Input
-                  type="text"
-                  id="email"
-                  placeholder="Desire"
-                  className="bg-[#F9F9FC] shadow"
-                />
-              </div>
-              <div className="grid w-full max-w-sm items-center gap-1.5 mt-4">
-                <Label htmlFor="email">
-                  <h1 className="text-sm">Type</h1>
-                </Label>
-                <Input
-                  type="text"
-                  id="email"
-                  placeholder="Diamond"
-                  className="bg-[#F9F9FC] shadow"
-                />
-              </div>
-              <div className="w-full h-[300px] relative bg-[#F9F9FC] border shadow  rounded-lg mt-4 flex flex-col items-center justify-center">
-                <h1 className="text-xs">
-                  {" "}
-                  Drag and drop image here, or click change image
-                </h1>
-                <Button
-                  className="mt-4 bg-[#DEDEFA] text-[#133FB2]"
-                  variant={null}
-                >
-                  {" "}
-                  Change image
-                </Button>
-                <div className="flex gap-6 mt-6 absolute bottom-2">
-                  {" "}
-                  <Button className=" bg-red-600 text-white" variant={null}>
-                    {" "}
-                    Cancel
-                  </Button>{" "}
-                  <Button className=" bg-[#133FB2] text-white" variant={null}>
-                    {" "}
-                    Confirm
-                  </Button>{" "}
-                </div>
-              </div>
-            </div>
-          </SheetContent>
-        </Sheet>
+        <ServiceSheet />
       </div>
       <div className="w-full h-full flex items-start justify-center mt-2   overflow-auto ">
         <Table className="w-[95%] border rounded-[15px] shadow bg-white">
@@ -305,7 +142,7 @@ export default function Services() {
             </TableRow>
           </TableHeader>
           <TableBody className="w-full">
-            {Requests.map((Requests) => (
+            {serviceTable.map((Requests) => (
               <TableRow key={Requests.phonenumber}>
                 <TableCell className="flex items-center ">
                   <Avatar>

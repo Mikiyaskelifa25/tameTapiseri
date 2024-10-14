@@ -10,11 +10,13 @@ import {
 import { Button } from "@/components/ui/button";
 import { Filter, Search, ScrollText, Upload, FileText } from "lucide-react";
 import Image from "next/image";
+import Check_Box from "../Shared_Components/Checkbox";
+
 
 export default function page() {
   return (
     <div className={"w-full h-[90%] flex flex-col items-center justify-start"}>
-      <div className="grid grid-cols-4 grid-rows-7 mt-2 h-full">
+      <div className="grid grid-cols-4 grid-rows-7 mt-2 h-[96%] w-[96%] ">
         <div className="flex w-full h-[50px] items-center mt-2 col-span-3 ">
           <Link href={"/"} className="flex items-center gap-2 ml-4">
             {" "}
@@ -45,12 +47,27 @@ export default function page() {
                   </h1>
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-auto p-0" align="start">
-                <h1 className="p-4 font-bold  animation-ping">
-                  {" "}
-                  i will be back
-                </h1>
-              </PopoverContent>
+              <PopoverContent
+              className="w-[200px] p-3 flex flex-col  items-center justify-center"
+              align="start"
+            >
+              <div className=" w-full flex items-center justify-between px-2">
+                <h1 className="font-semibold">Filter </h1>
+                <h1 className="px-1 bg-red-500 text-white rounded"> clear</h1>
+              </div>
+              <div className="flex mt-2 p-2 w-full justify-between">
+           
+                <div className="space-y-2">
+                <h1 className="text-sm my-2 "> Category</h1>
+                  <Check_Box lable="Door" />
+                  <Check_Box lable="Chair" />
+                  <Check_Box lable="Floor" />
+                  <Check_Box lable="Roof" />
+                  <Check_Box lable="Gear" />
+                  <Check_Box lable="Steering Wheel" />
+                </div>
+              </div>
+            </PopoverContent>
             </Popover>
           </div>
           <div className="border rounded-[6px] flex items-center justify-center ml-40  bg-[#DEDEFA] h-[30px]">

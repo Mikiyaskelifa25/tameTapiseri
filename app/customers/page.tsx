@@ -1,5 +1,5 @@
 "use client";
-import { Input } from "@/components/ui/input";
+
 
 import {
   ChevronLeft,
@@ -36,71 +36,14 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import customerTable from "../Fake_Data/customerTable.json"
+import InputBox_component from "../Shared_Components/InputBox_component";
+import Radiobox_components from "../Shared_Components/Radiobox_components";
+import { RadioGroup } from "@/components/ui/radio-group";
 
 
 
-const Requests = [
-  {
-    phonenumber: "+25195846852",
-    name: "Teme tapiseri",
-    Date: "Sep 01 2024",
-    amount: "ETB 2,568",
-    Status: "Paid",
-    servicename: "Taitu",
-    bank: "#4556666885",
-    refno: "FT556656565",
-  },
-  {
-    phonenumber: "+2511111111",
-    name: "David",
-    Date: "Sep 01 2024",
-    amount: "ETB 2,568",
-    Status: "Paid",
-    servicename: "Masqel",
-    bank: "#455885",
-    refno: "FT5565",
-  },
-  {
-    phonenumber: "+2511555",
-    name: "Aman",
-    Date: "Sep 01 2024",
-    amount: "ETB 2,568",
-    Status: "Paid",
-    servicename: "Wub Alem",
-    bank: "#4556666885",
-    refno: "FT556656757565",
-  },
-  {
-    phonenumber: "+25195846852",
-    name: "Teme tapiseri",
-    Date: "Sep 01 2024",
-    amount: "ETB 2,568",
-    Status: "Paid",
-    servicename: "Taitu",
-    bank: "#4556666885",
-    refno: "FT556656565",
-  },
-  {
-    phonenumber: "+2511111111",
-    name: "David",
-    Date: "Sep 01 2024",
-    amount: "ETB 2,568",
-    Status: "Paid",
-    servicename: "Masqel",
-    bank: "#455885",
-    refno: "FT5565",
-  },
-  {
-    phonenumber: "+25195846852",
-    name: "Teme tapiseri",
-    Date: "Sep 01 2024",
-    amount: "ETB 2,568",
-    Status: "Paid",
-    servicename: "Taitu",
-    bank: "#4556666885",
-    refno: "FT556656565",
-  },
-];
+
 export default function Customers() {
   return (
     <div className="w-full h-full flex flex-col items-center justify-start ">
@@ -111,11 +54,8 @@ export default function Customers() {
         </Link>
 
         <div className="w-[300px] overflow-hidden flex items-center h-[38px] ml-20 rounded-[30px] bg-white border shadow">
-          <Input
-            type="text"
-            placeholder="Search anyting here..."
-            className="w-[90%] h-[36px] border-0"
-          />
+      
+          <InputBox_component lable={null} type="text" placeholder="Search anyting here..." inputStyle="w-[90%] h-[36px] border-0"/>
           <Search strokeWidth={2} size={16} color="#667085" className="mx-2" />
         </div>
 
@@ -129,8 +69,24 @@ export default function Customers() {
                 </h1>
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-auto p-0" align="start">
-              <h1 className="p-4 font-bold  animation-ping"> i will be back</h1>
+            <PopoverContent
+              className="w-[200px] p-3 flex flex-col  items-center justify-center"
+              align="start"
+            >
+              <div className=" w-full flex items-center justify-between px-2">
+                <h1 className="font-semibold">Filter </h1>
+                <h1 className="px-1 bg-red-500 text-white rounded"> clear</h1>
+              </div>
+              <div className="flex mt-2 p-2 w-full justify-between">
+                <div>
+                  <h1 className="text-sm my-2"> Status</h1>
+                  <RadioGroup defaultValue="one">
+                    <Radiobox_components lable="Active" id="one" />
+                    <Radiobox_components lable="Inactive" id="two" />
+                  </RadioGroup>
+                </div>
+       
+              </div>
             </PopoverContent>
           </Popover>
         </div>
@@ -159,7 +115,7 @@ export default function Customers() {
 
       </div>
       <div className="w-full h-full flex items-start justify-center mt-2   overflow-auto ">
-        <Table className="w-[95%] border rounded-[15px] shadow bg-white">
+        <Table className="w-[95%]  rounded-[15px] shadow bg-white">
           <TableHeader>
             <TableRow className="  ">
               <TableHead className="text-[#333843] font-semibold">
@@ -186,7 +142,7 @@ export default function Customers() {
             </TableRow>
           </TableHeader>
           <TableBody className="w-full">
-            {Requests.map((Requests) => (
+            {customerTable?.map((Requests) => (
               <TableRow key={Requests.phonenumber}>
                 <TableCell className="flex items-center ">
                   <Avatar className="w-[50px] h-[50px] rounded-md">
@@ -200,23 +156,26 @@ export default function Customers() {
                 </TableCell>
                 <TableCell>
                   <h1 className="text-[#89868D] text-xs">
-                    {Requests.servicename}
+                    {Requests.name}
                   </h1>
                 </TableCell>
                 <TableCell>
-                  <h1 className="text-[#89868D] text-xs">{Requests.bank}</h1>
+                  <h1 className="text-[#89868D] text-xs">{Requests.MiddleName}</h1>
                 </TableCell>
                 <TableCell>
-                  <h1 className="text-[#89868D] text-xs">{Requests.refno}</h1>
+                  <h1 className="text-[#89868D] text-xs">{Requests.phonenumber}</h1>
                 </TableCell>
                 <TableCell>
-                  <h1 className="text-[#89868D] text-xs">{Requests.amount}</h1>
+                  <h1 className="text-[#89868D] text-xs">{Requests.email}</h1>
                 </TableCell>
                 <TableCell>
                   <Switch className="bg-[#2663EB]" />
                 </TableCell>
                 <TableCell>
-                 <Eye color={"#89868D"} size={16}/>
+                  <Link href={Requests.request} >
+                  <Eye color={"#89868D"} size={16} className="hover:scale-110"/>
+                  </Link>
+                
                 </TableCell>
               </TableRow>
             ))}

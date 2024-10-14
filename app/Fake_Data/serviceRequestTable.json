@@ -1,0 +1,44 @@
+ [
+    {
+      "Product": "Chair",
+      "Date": "Sep 01 2024",
+      "src": "/assets/categories.icons/chair.jpg",
+      "Status": "approved"
+    },
+    {
+      "Product": "Steering Wheel",
+      "Date": "Sep 01 2024",
+      "src": "/assets/categories.icons/wheel1.jpg",
+      "Status": "Cancelled"
+    },
+    {
+      "Product": "Gear",
+      "Date": "Sep 01 2024",
+      "src": "/assets/categories.icons/gear.webp",
+      "Status": "requested"
+    },
+    {
+      "Product": "Chair",
+      "Date": "Sep 01 2024",
+      "src": "/assets/categories.icons/chair.jpg",
+      "Status": "approved"
+    },
+    {
+      "Product": "Door",
+      "Date": "Sep 01 2024",
+      "src": "/assets/categories.icons/door.jpg",
+      "Status": "cancelled"
+    },
+    {
+      "Product": "Floor",
+      "Date": "Sep 01 2024",
+      "src": "/assets/categories.icons/floor.webp",
+      "Status": "requested"
+    },
+    {
+      "Product": "Chair",
+      "Date": "Sep 01 2024",
+      "src": "/assets/categories.icons/chair.jpg",
+      "Status": "approved"
+    }
+  ]

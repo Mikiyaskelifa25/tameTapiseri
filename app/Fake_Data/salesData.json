@@ -1,0 +1,66 @@
+ [
+    {
+      "value": "635,000.00",
+      "title": "Sales",
+      "src": "/assets/dashboardicons/Sales.png",
+      "link": "/sales"
+    },
+    {
+      "value": "123",
+      "title": "Services",
+      "src":"/assets/dashboardicons/services.png",
+      "link": "/services"
+    },
+    {
+      "value": "10",
+      "title": "Car Brands",
+      "src":"/assets/dashboardicons/carBrands.png",
+      "link": "/categories"
+    },
+    {
+      "value": "5",
+      "title": "Categories",
+      "src":"/assets/dashboardicons/category.png",
+      "link": "/categories"
+    },
+    {
+      "value": "2300",
+      "title": "Customers",
+      "src":"/assets/dashboardicons/customers.png",
+      "link": "/customers"
+    },
+    {
+      "value": "4",
+      "title": "Staffs",
+      "src": "/assets/dashboardicons/staffs.png",
+      "link": "/staffs"
+    },
+    {
+      "value": "230",
+      "title": "Request",
+      "src": "/assets/dashboardicons/requests.png",
+      "link": "/requests"
+    },
+    {
+      "value": "123",
+      "title": "Blogs",
+      "src": "/assets/dashboardicons/blogs.png",
+      "link": "/blogs"
+    },
+    {
+      "value": "2",
+      "title": "Bodcast",
+      "src": "/assets/dashboardicons/bodcast.png",
+      "link": "/bodcast"
+    },
+    {
+      "value": "123",
+      "title": "Blogs",
+      "src": "/assets/dashboardicons/bodcast.png",
+      "link": "/blogs"
+    }
+  ]
+
+
+
+  
