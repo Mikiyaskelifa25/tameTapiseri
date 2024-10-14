@@ -40,7 +40,9 @@ console.log(path)
             <DropdownMenuLabel>
               <div className="flex w-full justify-between">
                 <h1>Notifications</h1>
+                <Link href={"/notifications"}>
                 <h1 className="text-green-500">+ Create Notifications</h1>
+                </Link>
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
@@ -116,7 +118,8 @@ console.log(path)
 
             <DropdownMenuSeparator />
             <DropdownMenuItem className="w-full ">
-              <h1 className="text-xs text-center"><Link href="notifications">View all messages</Link></h1>
+
+              <h1 className="text-xs text-center"><Link href="requests">View all messages</Link></h1>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

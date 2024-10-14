@@ -1,11 +1,8 @@
-
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Copyright, } from "lucide-react";
-import React from 'react'
-
-
+import { Copyright } from "lucide-react";
+import React from "react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,19 +21,18 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,navbar
+  children,
+  navbar,
 }: {
   children: React.ReactNode;
   navbar: React.ReactNode;
 }) {
- 
-
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen w-screen`}
       >
-  {navbar}
+        {navbar}
         {children}
         <div className="w-full h-[50px] bg-white mt-1  flex items-center justify-center">
           <h1 className="text-[#7B7B7B] text-[11px] font-bold flex items-center">

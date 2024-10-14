@@ -40,7 +40,10 @@ export default function Default() {
             <DropdownMenuLabel>
               <div className="flex w-full justify-between">
                 <h1>Notifications</h1>
+                <Link href={"/notifications"}>
                 <h1 className="text-green-500">+ Create Notifications</h1>
+                </Link>
+               
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
